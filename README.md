@@ -34,7 +34,7 @@ You can customize this:
 4. The extension will now appear in your browser toolbar.
 5. Pin the plugin to toolbar for easy access.
 
-🛠️ How to Use
+## 🛠️ How to Use
 1. Open a webpage or web application you want to monitor.
 2. Click the API Duplicate Detector extension icon in the browser toolbar.
 3. Use the popup window to:
@@ -45,11 +45,11 @@ You can customize this:
     - Method: The HTTP method (e.g., GET, POST).
     - Count: The number of duplicate requests detected.
 
-🛠️ Development
-Prerequisites
+## 🛠️ Development
+### Prerequisites
 - Chrome: To load and test the extension.
 - Node.js (optional): For advanced customization.
-Key Files
+### Key Files
 - manifest.json: Extension configuration.
 - background.js: Core logic for API monitoring.
 - popup.html: Popup UI layout.
@@ -57,15 +57,15 @@ Key Files
 
 Feel free to fork this repository and customize it as needed.
 
-🤝 Contributing
+## 🤝 Contributing
 Contributions are welcome! If you have ideas for improvements or bugs to report:
   1. Open an issue in this repository.
   2. Submit a pull request with your changes.
 
-📜 License
+## 📜 License
 This project is licensed under the MIT License.
 
-📧 Support
+## 📧 Support
 For any questions or issues, contact karim.yasser.ahmed@gmail.com.
   ```vbnet
   Replace the placeholders (e.g., repository URL, email address) with the actual details of your project. Let me know if you'd like to include additional sections or adjustments!
