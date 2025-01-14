@@ -24,8 +24,7 @@ A Chrome extension to detect and log duplicate API requests for the active tab. 
 
 ### Step 2: Replace the URL Filter
 By default, the extension monitors all URLs. 
-You can customize this:
-"<all_urls>" and replace it with your API URLs
+You can customize this "<all_urls>" in manifest.js and background.js and replace it with your API URLs
 
 ### Step 3: Load the Extension in Chrome
 1. Open Chrome and go to chrome://extensions/.
