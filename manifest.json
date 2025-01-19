@@ -3,7 +3,7 @@
   "name": "API Duplicate Detector",
   "version": "1.0",
   "description": "Detect duplicate API requests in the network.",
-  "permissions": ["webRequest", "storage"],
+  "permissions": ["webRequest", "storage", "activeTab"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"

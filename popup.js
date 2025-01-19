@@ -1,3 +1,4 @@
+let duplicateRequests = [];
 // Fetch and display logs from the background script
 function displayLogs(logs) {
     const logsContainer = document.getElementById("logs");
@@ -13,7 +14,7 @@ function displayLogs(logs) {
             const timestamp = Date.now();
             const logDiv = document.createElement("div");
             logDiv.className = "log";
-            logDiv.innerHTML = `>> [${method}] <br> ${url} <br> Duplicates: ${count} | Time since last: ${timestamp - lastTimestamp} ms`;
+            logDiv.innerHTML = `>> [${method}] ${url} <br> Duplicates: ${count} | Time since last: ${timestamp - lastTimestamp} ms`;
             logsContainer.appendChild(logDiv);
         }
     });
@@ -22,6 +23,7 @@ function displayLogs(logs) {
   // Get logs from the background script
   chrome.runtime.sendMessage({ type: "getLogs" }, (response) => {
     if (response && response.logs) {
+      duplicateRequests = response.logs;
       displayLogs(response.logs);
     }
   });
@@ -31,5 +33,24 @@ function displayLogs(logs) {
     chrome.runtime.sendMessage({ type: "clearLogs" }, () => {
       displayLogs([]);
     });
+  });
+
+  document.getElementById('exportButton').addEventListener('click', () => {
+    const data = duplicateRequests.map(({ url, method, count, lastTimestamp }) => ({
+      method: method,
+      url: url,
+      count: count,
+      timeSinceLast: Date.now() - lastTimestamp
+    })).filter(e => e.count > 1);
+  
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+  
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'duplicate_requests.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   });
   
