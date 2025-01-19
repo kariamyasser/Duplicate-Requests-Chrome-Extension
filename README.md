@@ -66,6 +66,4 @@ This project is licensed under the MIT License.
 
 ## 📧 Support
 For any questions or issues, contact karim.yasser.ahmed@gmail.com.
-  ```vbnet
-  Replace the placeholders (e.g., repository URL, email address) with the actual details of your project. Let me know if you'd like to include additional sections or adjustments!
 
